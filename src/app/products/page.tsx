@@ -43,9 +43,13 @@ export default async function ProductsPage({
   // 2. Fetch products using our smart filter
   const products = await prisma.product.findMany({
     where: dbFilter, 
-    orderBy: {
-      createdAt: "desc", 
+    orderBy: [{
+      stock: 'desc', // Items with stock appear first
     },
+    {
+      createdAt: 'desc', // Then sort by newest
+    }
+  ]
   });
 
   return (

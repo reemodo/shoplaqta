@@ -14,7 +14,7 @@ type ProductProps = {
 };
 
 export default function ProductCard({ product }: { product: ProductProps }) {
-    const addItem = useCartStore((state) => state.addItem);
+   const addItem = useCartStore((state) => state.addItem);
    const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault(); // Stops the Link from navigating away
     addItem({
