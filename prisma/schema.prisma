@@ -5,7 +5,6 @@ generator client {
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -27,7 +26,7 @@ model Product {
   stock       Int         @default(1)
   imageUrl    String?
   createdAt   DateTime    @default(now())
-  images      String[]?
+  images      String[]
   orderItems  OrderItem[]
 }
 
