@@ -21,7 +21,7 @@ model Product {
   id          String      @id @default(uuid())
   name        String
   description String
-  price       Decimal
+  price       Float
   category    String
   condition   String?
   stock       Int         @default(1)
@@ -37,7 +37,7 @@ model Order {
   id            String      @id @default(uuid())
   customerName  String
   customerPhone String
-  totalAmount   Decimal
+  totalAmount   Float
   status        OrderStatus @default(PENDING)
   city          String
   street        String

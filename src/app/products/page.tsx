@@ -19,9 +19,12 @@ export default async function ProductsPage({
     };
   
   } else if (searchString === "Used Phones" || searchString === "Used") {
-    dbFilter = { 
-      category: "Phones", 
-      condition: { contains: "Used", mode: "insensitive" } 
+    dbFilter = {
+      category: "Phones",
+      OR: [
+        { condition: { contains: "Used", mode: "insensitive" } },
+        { condition: { contains: "Like New", mode: "insensitive" } }
+      ]
     };
   } else if (searchString === "Accessories" ) {
     // This tells the database to grab anything in these categories
