@@ -4,6 +4,7 @@ import { ChevronRight, ShieldCheck, Truck } from "lucide-react";
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/src/components/AddToCartButton"; // Import the client button
 import ProductGallery from "@/src/components/ProductGallery";
+import { Decimal } from "@prisma/client/runtime/library";
 
 export default async function ProductPage({ params }: { params: Promise<{ productId: string }> }) {
   const { productId } = await params;
@@ -32,7 +33,7 @@ export default async function ProductPage({ params }: { params: Promise<{ produc
                 {product.condition || "New Arrival"}
               </span>
               <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-2">{product.name}</h1>
-              <p className="text-3xl font-light text-gray-900">₪{Number(product.price).toLocaleString()}</p>
+              <p className="text-3xl font-light text-gray-900">₪{Decimal(product.price).toFixed(2)}</p>
             </div>
 
             <div className="h-px bg-gray-100 w-full" />
