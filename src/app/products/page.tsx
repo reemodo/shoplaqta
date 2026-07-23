@@ -83,7 +83,7 @@ export default async function ProductsPage({
                 product={{
                   ...product,
                   images: product.images,
-                  price: product.price
+                  price: Prisma.Decimal(product.price)
                 }} 
               />
             ))}
