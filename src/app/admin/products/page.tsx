@@ -52,7 +52,7 @@ export default async function ProductsPage() {
                 </td>
                 
                 <td className="p-4 font-medium">
-                  ₪{Decimal(product.price).toFixed(2)}
+                  ₪{Decimal(product.price).toFixed(2)} 
                 </td>
                 
                 <td className="p-4">
