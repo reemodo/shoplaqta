@@ -1,5 +1,6 @@
 // app/(admin)/products/page.tsx
 import prisma from '@/src/lib/prisma';
+import { Decimal } from '@prisma/client/runtime/library';
 import Link from 'next/link';
 
 export default async function ProductsPage() {
@@ -51,7 +52,7 @@ export default async function ProductsPage() {
                 </td>
                 
                 <td className="p-4 font-medium">
-                  ₪{Number(product.price).toFixed(2)}
+                  ₪{Decimal(product.price).toFixed(2)}
                 </td>
                 
                 <td className="p-4">
