@@ -10,10 +10,10 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           <h2 className="text-2xl font-bold text-gray-800">Laqta Manager</h2>
         </div>
         <nav className="flex-1 p-4 space-y-2">
-          <Link href="/products" className="block p-3 rounded-lg hover:bg-blue-50 text-gray-700">
+          <Link href="/admin/products" className="block p-3 rounded-lg hover:bg-blue-50 text-gray-700">
             Products & Sales
           </Link>
-          <Link href="/orders" className="block p-3 rounded-lg hover:bg-blue-50 text-gray-700">
+          <Link href="/admin/orders" className="block p-3 rounded-lg hover:bg-blue-50 text-gray-700">
             Order Fulfillment
           </Link>
         </nav>
